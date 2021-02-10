@@ -1,0 +1,634 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.background {
+  background: black center/cover;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.header {
+  position: relative;
+  margin: auto;
+  height: 30vh;
+  background-color: transparent;
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+}
+
+.header__title {
+  letter-spacing: 3px;
+  transform: translateY(70%);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 70vh;
+  background-color: transparent;
+}
+
+.field__character {
+  display: flex;
+  justify-content: space-around;
+  background-color: none;
+  z-index: 100;
+}
+
+.field__character img {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.field__character img:hover {
+  transform: scale(1.05);
+}
+
+.field__bg {
+  background: radial-gradient(closest-side, #fff, #00796b, #000 100%);
+  width: 100%;
+  height: 30vh;
+  transform: translateY(-30%);
+  z-index: 99;
+}
+/* 운석게임(게임1) */
+.metorGame {
+  position: absolute;
+  margin: auto;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  background: url(./amongUs_img/universe.png) center/cover no-repeat;
+  z-index: 200;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.metorGame-none {
+  display: none;
+}
+
+.gameField {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.metor {
+  cursor: pointer;
+}
+
+.trash {
+  width: 100px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.game1Exit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 32px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.game1Exit:hover {
+  transform: scale(1.1);
+}
+
+/* 의무실(게임2) */
+.medical-room {
+  position: absolute;
+  margin: auto;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  background: url(./amongUs_img/어몽어스의무실.jpg) center/cover no-repeat;
+  z-index: 200;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.room-shadow {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-30%);
+  z-index: 210;
+}
+
+.medical-room-none {
+  display: none;
+}
+
+.room-character {
+  position: relative;
+  top: 40%;
+  left: 7%;
+  width: 150px;
+  z-index: 220;
+}
+
+.room-foothold {
+  position: relative;
+  width: 300px;
+  left: 50%;
+  top: 70%;
+  z-index: 215;
+}
+
+.room-popUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  height: 50%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 40px;
+  z-index: 230;
+}
+
+.room-popUp-none {
+  display: none;
+}
+
+.room-popUp h1 {
+  color: #fff;
+  font-size: 42px;
+}
+
+.roomBtn {
+  font-size: 50px;
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.roomBtn:hover {
+  transform: scale(1.1);
+  color: antiquewhite;
+}
+
+/* 채팅창(게임3) */
+.chattingLobby {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  margin: auto;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  background: rgb(149, 185, 226);
+  z-index: 200;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.chattingLobby-none {
+  display: none;
+}
+
+.persons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  margin: 30px 5%;
+  padding: 20px;
+  flex: 1 1 30%;
+  height: 100px;
+  background-color: slateblue;
+  border-radius: 10px;
+}
+
+.person__img {
+}
+
+.person__name {
+  padding-left: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.chatBtn {
+  margin: auto 5% auto auto;
+  right: 0;
+  background: inherit;
+  color: #fff;
+  font-size: 42px;
+  border: none;
+  outline: none;
+}
+
+.chatBtn i {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.chatBtn i:hover {
+  color: #000;
+  transform: scale(1.1);
+}
+
+.remainTime {
+  margin: auto 5% 5% auto;
+  font-size: 24px;
+}
+
+.chattingScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  margin: auto;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: rgb(170, 192, 218);
+  opacity: 0.98;
+  z-index: 210;
+  border-radius: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e8e8e8 transparent;
+}
+
+.chattingScreen::-webkit-scrollbar {
+  width: 10px;
+}
+.chattingScreen::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.chattingScreen::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.chattingScreen-none {
+  display: none;
+}
+
+.chatExample {
+  margin: 2% 2% 0 2%;
+}
+
+.chat__wrap {
+  display: flex;
+  margin: 10px;
+  width: 60%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 3px gray;
+}
+
+.chat__wrap:last-child {
+  margin-bottom: 0;
+}
+
+.chat__img {
+  padding: 1% 2%;
+}
+
+.conversation {
+  margin: auto 3%;
+  font-size: 18px;
+}
+
+.screen__items {
+  margin: 0 2% 2% 2%;
+  transform: translateX(20%);
+}
+
+.screen__input {
+  margin: 3%;
+}
+
+.screen_text {
+  width: 100%;
+  height: 40px;
+  font-size: 28px;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+}
+
+.screen__exit {
+  position: fixed;
+  top: 5%;
+  right: 7%;
+  background: inherit;
+  color: #fff;
+  font-size: 42px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.screen__exit:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+
+.item {
+  margin: auto;
+
+  width: 60%;
+}
+
+.item__wrap {
+  display: flex;
+  margin: 10px;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 3px gray;
+}
+
+/* terminology */
+.terminology-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: absolute;
+  margin: auto;
+  top: 2.5%;
+  left: 2.5%;
+  width: 95%;
+  height: 95%;
+  background: url(./amongUs_img/term_background.png) center/cover no-repeat;
+  border: 1px solid #fff;
+  z-index: 200;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.terminology-wrap::-webkit-scrollbar {
+  width: 10px;
+}
+.terminology-wrap::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.terminology-wrap::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.terminology-wrap-none {
+  display: none;
+}
+
+.backImg {
+  width: 100px;
+}
+
+.backImg1 {
+  animation-duration: 8s;
+  animation-name: move1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.backImg2 {
+  animation-duration: 20s;
+  animation-name: move2;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.backImg3 {
+  animation-duration: 10s;
+  animation-name: move3;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes move1 {
+  from {
+    transform: translateX(10px) rotate(350deg);
+  }
+  to {
+    transform: translateX(1600px);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    transform: translateX(500px) rotate(90deg);
+  }
+  40% {
+    transform: translateX(1600px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes move3 {
+  0% {
+    transform: translateX(1600px) rotate(350deg);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.terminology {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin: auto;
+  top: 5%;
+  left: 20%;
+  width: 60%;
+  height: 90%;
+  background: #000;
+  color: #fff;
+  box-shadow: 2px 2px 10px gray;
+  border-radius: 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e8e8e8 transparent;
+}
+
+.term__title {
+  padding-top: 1%;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 600;
+}
+.term__content {
+  padding: 20px;
+  font-size: 28px;
+}
+
+.termExit {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: inherit;
+  color: #fff;
+  font-size: 42px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.termExit:hover {
+  transform: scale(1.1);
+  color: rgb(216, 189, 189);
+}
+
+/* 소개 */
+.introduce {
+  position: absolute;
+  margin: auto;
+  padding: 50px 100px;
+  top: 2.5%;
+  left: 20%;
+  width: 60%;
+  height: 95%;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  z-index: 200;
+  overflow: hidden;
+}
+
+.introduce-none {
+  display: none;
+}
+
+.intro__text {
+  color: #fff;
+  font-size: 42px;
+}
+
+.introExit {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background: inherit;
+  color: #fff;
+  font-size: 42px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.introExit:hover {
+  transform: scale(1.1);
+  color: rgb(170, 179, 230);
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    font-size: 50px;
+  }
+  .field__character img {
+    width: 170px;
+  }
+  .room-character {
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .field__character img {
+    width: 150px;
+  }
+  .field__bg {
+    height: 25vh;
+  }
+  .room-character {
+    width: 100px;
+  }
+  .room-foothold {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .field__character img {
+    width: 120px;
+  }
+  .field__bg {
+    height: 20vh;
+  }
+  .room-character {
+    width: 75px;
+  }
+  .room-foothold {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .field__character img {
+    width: 100px;
+  }
+  .field__bg {
+    height: 15vh;
+    transform: translateY(-5%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .field__character img {
+    width: 80px;
+  }
+  .field__bg {
+    height: 10vh;
+    transform: translateY(20%);
+  }
+}

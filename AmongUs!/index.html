@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Among Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/c8c770dacd.js" crossorigin="anonymous"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <section class="background">
+    <header class="header">
+      <h1 class="header__title">☢ Among Us ☢</h1>
+    </header>
+    <section class="field">
+      <div class="field__character">
+        <!-- 캐릭터 -->
+      </div>
+      <div class="field__bg"></div>
+    </section>
+    <!-- 게임 1 -->
+    <div class="metorGame metorGame-none">
+      <div class="gameField"></div>
+      <button class="game1Exit">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <!-- 게임 2 -->
+    <div class="medical-room medical-room-none">
+      <img src="./amongUs_img/분홍.png" alt="#" class="room-character" draggable="true">
+      <img src="./amongUs_img/의무실발판.png" alt="#" class="room-foothold">
+      <div class="room-shadow"></div>
+      <div class="room-popUp room-popUp-none">
+        <h1>mission Clear</h1>
+        <button class="roomBtn">
+          <i class="fas fa-door-open"></i>
+        </button>
+      </div>
+    </div>
+    <!-- 채팅 -->
+    <div class="chattingLobby chattingLobby-none">
+      <div class="persons">
+        <div class="person">
+          <div class="person__img">
+            <img src="./amongUs_img/노랑머리.png" alt="노랑머리">
+          </div>
+          <div class="person__name">김나라</div>
+        </div>
+        <div class="person">
+          <div class="person__img">
+            <img src="./amongUs_img/그린머리.png" alt="그린머리">
+          </div>
+          <div class="person__name">이상배</div>
+        </div>
+        <div class="person">
+          <div class="person__img">
+            <img src="./amongUs_img/핑크머리.png" alt="핑크머리">
+          </div>
+          <div class="person__name">최연우</div>
+        </div>
+        <div class="person">
+          <div class="person__img">
+            <img src="./amongUs_img/하양머리.png" alt="하양머리">
+          </div>
+          <div class="person__name">홍덕구</div>
+        </div>
+      </div>
+      <button class="chatBtn">
+        <i class="fas fa-comment-dots"></i>
+      </button>
+      <div class="remainTime">0s</div>
+    </div>
+    <div class="chattingScreen chattingScreen-none">
+      <div class="chatting-wrap">
+        <div class="chatExample">
+          <div class="chat__wrap">
+            <div class="chat__img">
+              <img src="./amongUs_img/그린머리.png" alt="">
+            </div>
+            <div class="conversation">
+              <span>범인 누구야</span>
+            </div>
+          </div>
+          <div class="chat__wrap">
+            <div class="chat__img">
+              <img src="./amongUs_img/노랑머리.png" alt="">
+            </div>
+            <div class="conversation">
+              <span>분홍 같은데</span>
+            </div>
+          </div>
+          <div class="chat__wrap">
+            <div class="chat__img">
+              <img src="./amongUs_img/핑크머리.png" alt="">
+            </div>
+            <div class="conversation">
+              <span>????????</span>
+            </div>
+          </div>
+        </div>
+        <ul class="screen__items"> </ul>
+      </div>
+      <footer class="screen__input">
+        <input type="text" class="screen_text"> </input>
+      </footer>
+      <button class="screen__exit"><i class="far fa-times-circle"></i></button>
+    </div>
+    <!-- terminology -->
+    <div class="terminology-wrap terminology-wrap-none">
+      <img class="backImg backImg1" src="./amongUs_img/metorite.png" alt="">
+      <img class="backImg backImg2" src="./amongUs_img/trash.png" alt="">
+      <img class="backImg backImg3" src="./amongUs_img/노랑.png" alt="">
+      <div class="terminology">
+        <header class="term__title">용어정리</header>
+        <section class="term__content"><b>크루원</b> : 시민</section>
+        <section class="term__content"><b>임포스터</b> : 마피아</section>
+        <section class="term__content"><b>사보티지</b> : 임포스터가 원격 조종으로 미션을 방해하고 비상 상황을 만들 수 있음(비상상황시 긴급 회의 불가능)</section>
+        <section class="term__content"><b>벤트</b> : 임포스터만 다닐 수 있는 하수구</section>
+        <section class="term__content"><b>리폿(시체보고)</b> : 시체를 발견할 경우 우측 하단 확성기 모양을 눌러 회의를 소집할 수 있음(횟수 제한 없음)</section>
+        <section class="term__content"><b>긴급회의</b> : 시체가 발견되지 않은 상황에서 식당 가운데 있는 버튼을 눌러 회의를 소집할 수 있음(횟수 제한)</section>
+        <section class="term__content"><b>확시</b> : 확정시민이라는 뜻으로 미션하는 행동이 다른 사람에게도 보여 시민임을 확정시키는 미션이 있음(확시 미션)</section>
+      </div>
+      <div class="termExit">
+        <i class="fas fa-arrow-alt-circle-left"></i>
+      </div>
+    </div>
+    <!-- 소개 -->
+    <div class="introduce introduce-none">
+      <span class="intro__text">이 프로젝트는 어몽어스라는 게임을 모티브로 제작한 프로젝트입니다. </br>
+        어몽어스 안의 미니게임들을 최대한 비슷하게 구현하려 노력했으며 채팅창도 내 채팅이 가능하게 끔 만들었습니다.</br>
+        부족한 실력임에도 이것저것 만들어보려 노력했으니 재밌게 봐주세요🧡
+      </span>
+      <div class="introExit">
+        <i class="fas fa-arrow-alt-circle-left"></i>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
