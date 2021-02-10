@@ -38,6 +38,7 @@ function game1Start() {
   initGame();
   metorGame.classList.remove('metorGame-none');
   metorGame.addEventListener('click', onFieldClick);
+  playSound(game1Sound);
 }
 
 let score = 0;
@@ -90,16 +91,6 @@ function randomNumber(min, max){
   return Math.random() * (max-min) + min;
 }
 
-//사운드
-function playSound(sound){
-  sound.currentTime = 0;
-  sound.play();
-}
-
-function stopSound(sound){
-  sound.pause();
-}
-
 const game1Exit = document.querySelector('.game1Exit');
 game1Exit.addEventListener('click', ()=> {
   metorGame.classList.add('metorGame-none');
@@ -112,8 +103,7 @@ pink.addEventListener('click', game2Start);
 function game2Start() {
   medicalRoomPopUp();
   dragCharacterInMedicalroom();
-  //캐릭터를 끌면 소리가 나면서 완료 팝업생성
-  //완료 버튼 누르면 전체 팝업이 사라짐
+  playSound(game2Sound);
 }
 
 const roomPopUp = document.querySelector('.room-popUp');
@@ -161,6 +151,7 @@ function dragCharacterInMedicalroom() {
       dragged.parentNode.removeChild( dragged );
       event.target.appendChild( dragged );
       roomPopUp.classList.remove('room-popUp-none');
+      playSound(missionClearSound);
     }
   }, false);
 }
@@ -178,6 +169,7 @@ function chatting() {
   chatSreenUnvisible();
   keyInput();
   startTimer();
+  playSound(chatSound);
 }
 
 const chatBtn = document.querySelector('.chatBtn');
@@ -243,6 +235,7 @@ function chatLobbyUnvisible() {
 function chatScreenVisible() {
   chatBtn.addEventListener('click', ()=> {
   chatScreen.classList.remove('chattingScreen-none');
+  playSound(chatScreenSound);
   })
 }
 
@@ -288,10 +281,12 @@ green.addEventListener('click', terminology);
 function terminology() {
   termWrap.classList.remove('terminology-wrap-none');
   termExitBtn();
+  playSound(terminologySound);
 }
 function termExitBtn() {
   termExit.addEventListener('click', ()=> {
     termWrap.classList.add('terminology-wrap-none');
+    stopSound(terminologySound);
   })
 }
 
@@ -301,7 +296,27 @@ const introExit = document.querySelector('.introExit');
 blue.addEventListener('click', thanks);
 function thanks() {
   introduce.classList.remove('introduce-none');
+  playSound(introduceSound);
   introExit.addEventListener('click', ()=> {
     introduce.classList.add('introduce-none');
+    stopSound(introduceSound);
   })
+}
+
+// 음향효과
+const game1Sound = new Audio('amongUs_bgm/어몽어스 로비 입장.mp3');
+const game2Sound = new Audio('amongUs_bgm/어몽어스 문닫힘.mp3');
+const chatSound = new Audio('amongUs_bgm/어몽어스 투표.mp3');
+const chatScreenSound = new Audio('amongUs_bgm/어몽어스 채팅.mp3');
+const terminologySound = new Audio('amongUs_bgm/어몽어스 게임 시작.mp3');
+const introduceSound = new Audio('amongUs_bgm/어몽어스 크루원승.mp3');
+const missionClearSound = new Audio('amongUs_bgm/어몽어스 이머전스 효과음.mp3');
+
+function playSound(sound){
+  sound.currentTime = 0;
+  sound.play();
+}
+
+function stopSound(sound){
+  sound.pause();
 }

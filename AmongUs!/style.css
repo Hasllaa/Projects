@@ -540,8 +540,25 @@ li {
   background: #000;
   border: 1px solid #fff;
   border-radius: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #e8e8e8 transparent;
   z-index: 200;
-  overflow: hidden;
+  overflow-y: auto;
+}
+
+.introduce::-webkit-scrollbar {
+  width: 10px;
+}
+.introduce::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.introduce::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }
 
 .introduce-none {
